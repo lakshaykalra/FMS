@@ -59,3 +59,7 @@ We propose using **Redis** for seat locking to handle high-concurrency scenarios
 
 ### Current Implementation
 In the current implementation, row-based locking is used to prevent double bookings. While this works for smaller scales, Redis-based locking is recommended for larger scales to handle high concurrency efficiently.
+
+## Improvements
+
+We can also add unit test cases using Jest, which comes out of the box with NestJS. This will help ensure the reliability and correctness of the application by testing individual components in isolation.
