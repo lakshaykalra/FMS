@@ -26,6 +26,12 @@ dotenv.config();
       database: process.env.DB_NAME,
       models: [User, Booking, Flight, Seat],
       autoLoadModels: true,
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false, // only for development
+        }
+      },
       synchronize: true, // Disable default synchronize
       // sync: { force: true }, // Force synchronization by dropping and recreating tables
     }),
@@ -48,6 +54,12 @@ dotenv.config();
           username: process.env.DB_USERNAME,
           password: process.env.DB_PASSWORD,
           database: process.env.DB_NAME,
+           dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false, // only for development
+        }
+      },
         });
         await sequelize.authenticate();
         return sequelize;
@@ -55,4 +67,4 @@ dotenv.config();
     },
   ],
 })
-export class AppModule {}
+export class AppModule { }
